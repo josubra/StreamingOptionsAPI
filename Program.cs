@@ -14,6 +14,20 @@ namespace StreamingOptionsAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            var myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(myAllowSpecificOrigins,
+                                      policy =>
+                                      {
+                                          policy.WithOrigins("http://wheretowatch.com.br")
+                                                              .AllowAnyHeader()
+                                                              .AllowAnyMethod();
+                                      });
+            });
+
+
             builder.WebHost.ConfigureKestrel(options =>
             {
                 options.ListenAnyIP(6323); 
@@ -60,6 +74,7 @@ namespace StreamingOptionsAPI
             app.UseExceptionHandler(_ => { });
 
             app.UseAuthorization();
+            app.UseCors(myAllowSpecificOrigins);
 
             app.UseRateLimiter();
             app.MapDefaultControllerRoute().RequireRateLimiting(fixedPolicy);
