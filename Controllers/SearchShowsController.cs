@@ -22,10 +22,7 @@ namespace StreamingOptionsAPI.Controllers
         {
             var client = new HttpClient();
             var baseUrl = "https://streaming-availability.p.rapidapi.com/shows/search/title?country=br";
-            string? secretPath = Environment.GetEnvironmentVariable("api_key");
-            using StreamReader reader = new(secretPath);
-
-            string rapidApiKey = reader.ReadToEnd();
+            string? rapidApiKey = Environment.GetEnvironmentVariable("api_key");
 
             var request = new HttpRequestMessage
             {
