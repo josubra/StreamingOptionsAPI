@@ -4,6 +4,6 @@ namespace StreamingOptionsAPI.VideoModel
 {
     public class StreamingOptionsViewModel
     {
-        public List<BrDTO>? Br { get; set; }
+        public List<BrViewModel>? Br { get; set; }
     }
 }

@@ -5,6 +5,6 @@ namespace StreamingOptionsAPI.VideoModel
 {
     public class ImageSetViewModel
     {
-        public VerticalPosterDTO? VerticalPoster { get; set; }
+        public VerticalPosterViewModel? VerticalPoster { get; set; }
     }
 }

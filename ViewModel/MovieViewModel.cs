@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using StreamingOptionsAPI.DTO;
+using StreamingOptionsAPI.VideoModel;
 
 namespace StreamingOptionsAPI.Model
 {
@@ -12,8 +13,9 @@ namespace StreamingOptionsAPI.Model
         public string? TmdbId { get; set; }
         public string Title { get; set; } = string.Empty;
         public string? ReleaseYear { get; set; }
-        List<GenreDTO>? Genres { get; set; }
-        public ImageSetDTO? ImageSet { get; set; }
-        public StreamingOptionsDTO? StreamingOptions { get; set; }
+        public string Overview { get; set; } = string.Empty;
+        public List<GenreViewModel>? Genres { get; set; }
+        public ImageSetViewModel? ImageSet { get; set; }
+        public StreamingOptionsViewModel? StreamingOptions { get; set; }
     }
 }
