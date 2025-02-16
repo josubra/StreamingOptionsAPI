@@ -1,5 +1,9 @@
 
+using Microsoft.AspNetCore.RateLimiting;
 using StreamingOptionsAPI.AutoMapper;
+using StreamingOptionsAPI.Model;
+using System.Globalization;
+using System.Threading.RateLimiting;
 
 namespace StreamingOptionsAPI
 {
@@ -9,6 +13,11 @@ namespace StreamingOptionsAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.ListenAnyIP(6323); 
+            });
+
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -16,6 +25,28 @@ namespace StreamingOptionsAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddAutoMapper(typeof(ConfigurationMapping));
+
+            var myOptions = new MyRateLimitOptions();
+            builder.Configuration.GetSection(MyRateLimitOptions.MyRateLimit).Bind(myOptions);
+            var fixedPolicy = "fixed";
+
+            builder.Services.AddRateLimiter(_ => _
+                .AddFixedWindowLimiter(policyName: fixedPolicy, options =>
+                {
+                    options.PermitLimit = myOptions.PermitLimit;
+                    options.Window = TimeSpan.FromSeconds(myOptions.Window);
+                })
+                .OnRejected = async (context, cancellationToken) =>
+                {
+                    if (context.Lease.TryGetMetadata(MetadataName.RetryAfter, out var retryAfter))
+                    {
+                        context.HttpContext.Response.Headers.RetryAfter =
+                            ((int)retryAfter.TotalSeconds).ToString(NumberFormatInfo.InvariantInfo);
+                    }
+
+                    context.HttpContext.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+                    await context.HttpContext.Response.WriteAsync("Too many requests. Please try again later.", cancellationToken);
+                });
 
             var app = builder.Build();
 
@@ -26,10 +57,10 @@ namespace StreamingOptionsAPI
                 app.UseSwaggerUI();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseAuthorization();
 
+            app.UseRateLimiter();
+            app.MapDefaultControllerRoute().RequireRateLimiting(fixedPolicy);
 
             app.MapControllers();
 
