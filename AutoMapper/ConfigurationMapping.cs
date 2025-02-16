@@ -10,7 +10,6 @@ namespace StreamingOptionsAPI.AutoMapper
         public ConfigurationMapping() 
         {
             CreateMap<MovieViewModel, MovieStreamResponseDTO>().ReverseMap();
-            CreateMap<GenreViewModel, GenreDTO>().ReverseMap();
             CreateMap<ImageSetViewModel, ImageSetDTO>().ReverseMap();
             CreateMap<VerticalPosterViewModel, VerticalPosterDTO>().ReverseMap();
             CreateMap<StreamingOptionsViewModel, StreamingOptionsDTO>().ReverseMap();
@@ -21,6 +20,7 @@ namespace StreamingOptionsAPI.AutoMapper
             CreateMap<LocaleViewModel, LocaleDTO>().ReverseMap();
             CreateMap<PriceViewModel, PriceDTO>().ReverseMap();
             CreateMap<AddonViewModel, AddonDTO>().ReverseMap();
+            CreateMap<GenreViewModel, GenreDTO>().ReverseMap();
         }
     }
 }

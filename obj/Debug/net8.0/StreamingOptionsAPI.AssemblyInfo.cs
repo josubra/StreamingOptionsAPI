@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("deed8d36-d2ac-4abf-a8d7-4181d859db94")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("StreamingOptionsAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d9c35b4fc51edb48dfa4d3a3c9938a8dd137a43")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ea8a23efcc7614b9a3f7ef86dd711f9f6fe6ad8")]
 [assembly: System.Reflection.AssemblyProductAttribute("StreamingOptionsAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StreamingOptionsAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

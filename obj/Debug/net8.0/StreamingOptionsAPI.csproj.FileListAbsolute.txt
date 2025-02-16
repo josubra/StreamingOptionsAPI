@@ -5,7 +5,9 @@ C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\ne
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\StreamingOptionsAPI.runtimeconfig.json
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\StreamingOptionsAPI.dll
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\StreamingOptionsAPI.pdb
+C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -16,6 +18,7 @@ C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\ne
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\StreamingOptionsAPI.csproj.CoreCompileInputs.cache
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\StreamingOptionsAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\StreamingOptionsAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\StreamingOptionsAPI.sourcelink.json
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\staticwebassets\msbuild.StreamingOptionsAPI.Microsoft.AspNetCore.StaticWebAssets.props
@@ -30,5 +33,3 @@ C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\ne
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\StreamingOptionsAPI.pdb
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\StreamingOptionsAPI.genruntimeconfig.cache
 C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\obj\Debug\net8.0\ref\StreamingOptionsAPI.dll
-C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\Josue\source\repos\StreamingOptionsAPI\StreamingOptionsAPI\bin\Debug\net8.0\AutoMapper.dll

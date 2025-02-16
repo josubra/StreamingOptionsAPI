@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Newtonsoft.Json;
 using StreamingOptionsAPI.DTO;
 using StreamingOptionsAPI.Model;
@@ -15,12 +16,17 @@ namespace StreamingOptionsAPI.Controllers
 
         public SearchShowsController(IMapper mapper) => _mapper = mapper;
 
+        [EnableRateLimiting("fixed")]
         [HttpGet(Name = "SearchByTitle")]
         public async Task<List<MovieViewModel>> Get(string title)
         {
             var client = new HttpClient();
             var baseUrl = "https://streaming-availability.p.rapidapi.com/shows/search/title?country=br";
-            string? rapidApiKey = Environment.GetEnvironmentVariable("x-rapidapi-key");
+            string? secretPath = Environment.GetEnvironmentVariable("X_RAPIDAPI_KEY");
+            using StreamReader reader = new(secretPath);
+
+            string rapidApiKey = reader.ReadToEnd();
+
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
