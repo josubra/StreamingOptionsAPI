@@ -1,6 +1,7 @@
 
 using Microsoft.AspNetCore.RateLimiting;
 using StreamingOptionsAPI.AutoMapper;
+using StreamingOptionsAPI.Exceptions;
 using StreamingOptionsAPI.Model;
 using System.Globalization;
 using System.Threading.RateLimiting;
@@ -19,12 +20,12 @@ namespace StreamingOptionsAPI
             });
 
             // Add services to the container.
-
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddAutoMapper(typeof(ConfigurationMapping));
+            builder.Services.AddExceptionHandler<AppExceptionHandler>();
 
             var myOptions = new MyRateLimitOptions();
             builder.Configuration.GetSection(MyRateLimitOptions.MyRateLimit).Bind(myOptions);
