@@ -57,6 +57,7 @@ namespace StreamingOptionsAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseExceptionHandler(_ => { });
 
             app.UseAuthorization();
 

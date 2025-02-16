@@ -10,10 +10,10 @@ namespace StreamingOptionsAPI.Exceptions
             {
                 StatusCode = StatusCodes.Status500InternalServerError,
                 ExceptionMessage = exception.Message,
+                StackTrace = exception.StackTrace,
                 Title = "Someting went wrong"
             };
             await httpContext.Response.WriteAsJsonAsync(response, cancellationToken);
-            httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
             return true;
         }
     }
