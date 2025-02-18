@@ -13,16 +13,28 @@ namespace StreamingOptionsAPI.Controllers
     public class SearchShowsController : ControllerBase
     {
         private readonly IMapper _mapper;
+        private readonly ILogger<SearchShowsController> _logger;
 
-        public SearchShowsController(IMapper mapper) => _mapper = mapper;
+        public SearchShowsController(IMapper mapper, ILogger<SearchShowsController> logger)
+        {
+            _mapper = mapper;
+            _logger = logger;
+        } 
+            
 
         [EnableRateLimiting("fixed")]
         [HttpGet(Name = "SearchByTitle")]
         public async Task<List<MovieViewModel>> Get(string title)
         {
+            _logger.LogInformation("Movie searched {title}", title);
             var client = new HttpClient();
             var baseUrl = "https://streaming-availability.p.rapidapi.com/shows/search/title?country=br";
-            string? rapidApiKey = Environment.GetEnvironmentVariable("api_key").Trim();
+            string? rapidApiKey = Environment.GetEnvironmentVariable("api_key");
+
+            if(rapidApiKey == null)
+            {
+                throw new ArgumentNullException("API KEY not found");
+            }
 
             var request = new HttpRequestMessage
             {
