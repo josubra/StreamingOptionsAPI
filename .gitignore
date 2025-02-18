@@ -1,3 +1,4 @@
-﻿
-/bin
+.secret.txt
+/.vs
 /obj
+/bin
