@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamingOptionsAPI", "Stre
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2F4BA121-55C2-4AD4-B2A0-AE28CB5C10F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamingOptionsAPI.Tests", "StreamingOptionsAPITests\StreamingOptionsAPI.Tests.csproj", "{1F1353FF-05C2-4E07-B1D9-5014D8DC4863}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2F4BA121-55C2-4AD4-B2A0-AE28CB5C10F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F4BA121-55C2-4AD4-B2A0-AE28CB5C10F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F4BA121-55C2-4AD4-B2A0-AE28CB5C10F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F1353FF-05C2-4E07-B1D9-5014D8DC4863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F1353FF-05C2-4E07-B1D9-5014D8DC4863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F1353FF-05C2-4E07-B1D9-5014D8DC4863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F1353FF-05C2-4E07-B1D9-5014D8DC4863}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
