@@ -1,5 +1,7 @@
 /secret.txt
-/.vs
-/obj
-/bin
+**/.vs
+**/obj
+**/bin
 docker-compose.yml
+*.nupkg
+**/[Pp]ackages/*
