@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace StreamingOptionsAPI.VideoModel
+﻿namespace StreamingOptionsAPI.ViewModel
 {
     public class VerticalPosterViewModel
     {

@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json;
-
-namespace StreamingOptionsAPI.VideoModel
+﻿namespace StreamingOptionsAPI.ViewModel
 {
     public class GenreViewModel
     {
-        public required string Id { get; set; }
-        public required string Name { get; set; }
+        public string? Id { get; set; }
+        public string? Name { get; set; }
     }
 }

@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using StreamingOptionsAPI.DTO;
-
-namespace StreamingOptionsAPI.VideoModel
+﻿namespace StreamingOptionsAPI.ViewModel
 {
     public class AddonViewModel
     {

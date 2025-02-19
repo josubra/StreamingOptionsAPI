@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using StreamingOptionsAPI.DTO;
-using StreamingOptionsAPI.Model;
-using StreamingOptionsAPI.VideoModel;
+using StreamingOptionsAPI.ViewModel;
 
 namespace StreamingOptionsAPI.AutoMapper
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
-using Newtonsoft.Json;
 using StreamingOptionsAPI.Controllers;
+using System.Text.Json;
 
 namespace StreamingOptionsAPI.Exceptions
 {
@@ -17,7 +17,7 @@ namespace StreamingOptionsAPI.Exceptions
                 StackTrace = exception.StackTrace,
                 Title = "Someting went wrong"
             };
-            _logger.LogError(JsonConvert.SerializeObject(response));
+            _logger.LogError(JsonSerializer.Serialize(response));
             await httpContext.Response.WriteAsJsonAsync(response, cancellationToken);
             return true;
         }

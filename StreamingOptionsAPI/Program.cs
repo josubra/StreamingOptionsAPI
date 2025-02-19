@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.RateLimiting;
 using StreamingOptionsAPI.AutoMapper;
 using StreamingOptionsAPI.Exceptions;
+using StreamingOptionsAPI.Interface;
 using StreamingOptionsAPI.Model;
+using StreamingOptionsAPI.Service;
 using System.Globalization;
 using System.Threading.RateLimiting;
 
@@ -13,6 +15,13 @@ namespace StreamingOptionsAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddStackExchangeRedisCache(redisOptions =>
+            {
+                string? connection = builder.Configuration.GetConnectionString("Redis");
+                redisOptions.Configuration = connection;
+            });
+            builder.Services.AddScoped<IRedisCacheService, RedisCacheService>();
 
             var myAllowSpecificOrigins = "_myAllowSpecificOrigins";
 

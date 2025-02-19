@@ -1,13 +1,8 @@
-﻿using Newtonsoft.Json;
-
-namespace StreamingOptionsAPI.DTO
+﻿namespace StreamingOptionsAPI.DTO
 {
     public class GenreDTO
     {
-        [JsonProperty("id")]
-        public required string Id { get; set; }
-
-        [JsonProperty("name")]
-        public required string Name { get; set; }
+        public string? Id { get; set; }
+        public string? Name { get; set; }
     }
 }

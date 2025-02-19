@@ -1,6 +1,4 @@
-﻿using StreamingOptionsAPI.DTO;
-
-namespace StreamingOptionsAPI.VideoModel
+﻿namespace StreamingOptionsAPI.ViewModel
 {
     public class StreamingOptionsViewModel
     {

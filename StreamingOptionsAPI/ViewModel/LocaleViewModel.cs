@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json;
-
-namespace StreamingOptionsAPI.VideoModel
+﻿namespace StreamingOptionsAPI.ViewModel
 {
     public class LocaleViewModel
     {
-        public required string Language { get; set; }
-        public required string Region { get; set; }
+        public string? Language { get; set; }
+        public string? Region { get; set; }
     }
 }
